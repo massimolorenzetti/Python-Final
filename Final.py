@@ -9,12 +9,12 @@ I have not given my code to any student.
 
 import pandas as pd
 import numpy as np
-import matplotlib as mpl
-import datetime as dt
+# import matplotlib as mpl
+# import datetime as dt
 import matplotlib.pyplot as plt
 import streamlit as st
 from mpl_toolkits.basemap import Basemap
-from geopy.geocoders import Nominatim
+# from geopy.geocoders import Nominatim
 from geopy import distance
 
 def all_coords_valid(lat_1, lon_1, lat_2, lon_2) :
