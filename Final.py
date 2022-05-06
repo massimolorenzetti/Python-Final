@@ -1,20 +1,11 @@
-"""
-Class: CS230--Section 3
-Name: Massimo Lorenzetti
-Description: Final Project: Uber Data
-I pledge that I have completed the programming assignment independently.
-I have not copied the code from a student or any source.
-I have not given my code to any student.
-"""
-
 import pandas as pd
 import numpy as np
-# import matplotlib as mpl
-# import datetime as dt
+import matplotlib as mpl
+import datetime as dt
 import matplotlib.pyplot as plt
 import streamlit as st
 from mpl_toolkits.basemap import Basemap
-# from geopy.geocoders import Nominatim
+from geopy.geocoders import Nominatim
 from geopy import distance
 
 def all_coords_valid(lat_1, lon_1, lat_2, lon_2) :
@@ -140,8 +131,8 @@ def time_vs_fare(data) :
     time_fare_gb = time_fare.groupby('time').mean()
     fig, ax = plt.subplots()
     ax.plot(range(0, 24), time_fare_gb)
-    ax.set_title('Fare Amount vs Number of Cars')
-    plt.xlabel('Number of Cars')
+    ax.set_title('Fare Amount vs Time of Day')
+    plt.xlabel('Time of Day')
     plt.ylabel('Fare Amount')
     return fig, time_fare_gb
 
@@ -172,7 +163,7 @@ def num_passengers_vs_fare(data) :
     num_pass_fare_gb = num_pass_fare.groupby('num_pass').mean()
     fig, ax = plt.subplots()
     ax.bar(num_pass_fare_gb.index, num_pass_fare_gb['fare'].values)
-    ax.set_title('Fare Amount vs Time of Day')
+    ax.set_title('Fare Amount vs Number of Cars')
     plt.xlabel('Number of Cars')
     plt.ylabel('Fare Amount')
     return fig, num_pass_fare_gb
