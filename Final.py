@@ -139,7 +139,7 @@ def time_vs_fare(data) :
     })
     time_fare_gb = time_fare.groupby('time').mean()
     fig, ax = plt.subplots()
-    ax.plot(range(0, 24), time_fare_gb)
+    ax.plot(range(0, 24), time_fare_gb)-1
     ax.set_title('Fare Amount vs Number of Cars')
     plt.xlabel('Number of Cars')
     plt.ylabel('Fare Amount')
